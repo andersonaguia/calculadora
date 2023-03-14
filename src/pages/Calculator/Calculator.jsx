@@ -1,5 +1,7 @@
 export const Calculator = () => {
-    return(
-        <></>
+    return (
+        <>
+            <p>Calculadora</p>
+        </>
     )
 }
