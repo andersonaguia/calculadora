@@ -8,7 +8,7 @@ export const CalculatorProvider = ({ children }) => {
     const [historyData, setHistoryData] = useState([]);
 
     useEffect(() => {
-        const defaultData = getData();
+        const defaultData = getData('HISTORY');
 
         if (defaultData) {
             setHistoryData(JSON.parse(defaultData));
@@ -16,7 +16,7 @@ export const CalculatorProvider = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        setData(JSON.stringify(historyData));
+        setData('HISTORY', JSON.stringify(historyData));
     }, [historyData.length])
 
     const handleHistoryData = (data) => {
