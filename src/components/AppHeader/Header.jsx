@@ -4,8 +4,6 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from 'react-router-dom';
 
 export const Header = () => {
@@ -15,17 +13,17 @@ export const Header = () => {
     }
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-                <Toolbar>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <AppBar color="primary" position="static">
+                <Toolbar >
+                    <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
                         CalcBras
                     </Typography>
                     <ul>
                         <li>
-                            <Button color="inherit" onClick={() => handlePage("/calculadora")}>Calculadora</Button>
+                            <Button color="secondary" variant="contained" onClick={() => handlePage("/calculadora")}>Calculadora</Button>
                         </li>
                         <li>
-                            <Button color="inherit" onClick={() => handlePage("/historico")}>Histórico</Button>
+                            <Button color="secondary" variant="contained" onClick={() => handlePage("/historico")}>Histórico</Button>
                         </li>
                     </ul>
                 </Toolbar>
