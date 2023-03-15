@@ -3,7 +3,7 @@ import * as yup from 'yup';
 export const validationSchema = yup.object({
     licensePlate: yup
         .string('Digite a placa do veículo')
-        .matches(/[A-Z]{3}[0-9][0-9A-Z][0-9]{2}/, 'Placa não deve conter traços ou espaços.')
+        .matches(/[A-Z]{3}[0-9][0-9A-Z][0-9]{2}/, 'Digite uma placa válida. Ex: BRA2E19 ou MNW0001')
         .required('Obrigatório informar a placa do veículo'),
 
     vehicleModel: yup

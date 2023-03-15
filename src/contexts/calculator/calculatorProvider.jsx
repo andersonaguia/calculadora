@@ -3,9 +3,12 @@ import { CalculatorContext } from "./calculatorContext";
 import { useEffect, useState } from "react";
 import { getData, setData } from "../../utils/localStorage/localStorage";
 import { calculateAverageConsumption } from "../../utils/calculateAverage/calculateAverage";
+import { useNavigate } from "react-router-dom";
 
 export const CalculatorProvider = ({ children }) => {
+    const navigate = useNavigate();
     const [historyData, setHistoryData] = useState([]);
+    const [result, setResult] = useState(null);
 
     useEffect(() => {
         const defaultData = getData('HISTORY');
@@ -23,6 +26,8 @@ export const CalculatorProvider = ({ children }) => {
         const vehicleData = data;
         vehicleData.fuelConsumptionPerTon = calculateAverageConsumption(data);
 
+        setResult(vehicleData.fuelConsumptionPerTon);
+
         const updateData = [
             ...historyData,
             vehicleData
@@ -30,11 +35,22 @@ export const CalculatorProvider = ({ children }) => {
         setHistoryData(updateData);
     }
 
+    const handleClearResult = () => {
+        setResult(null);
+    }
+   
+    const handlePage = (path) => {
+        navigate(path)
+    }
+
     return (
         <CalculatorContext.Provider value={
             {
                 historyData,
-                handleHistoryData
+                handleHistoryData,
+                result,
+                handleClearResult,
+                handlePage
             }
         }>
             {children}
