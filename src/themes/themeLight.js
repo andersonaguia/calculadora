@@ -14,11 +14,11 @@ export const themeLight = createTheme({
         },
         background: {
             default: "#FFFFFF",
-            paper: "FFFFFF"
+            paper: "#CBDEE8"
         },
         text: {
             primary: "#3E5055",
             secondary: "8B979F"
-        }        
+        }
     }
 });
