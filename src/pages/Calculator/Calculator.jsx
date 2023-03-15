@@ -3,17 +3,27 @@ import { Box, Button, TextField } from '@mui/material';
 import { validationSchema } from '../../validations/formValidation';
 import { useCalculator } from '../../contexts/calculator/useCalculator';
 import { FormStyled } from './calculator.styles';
+import { useState } from 'react';
 
 export const Calculator = () => {
-    const { handleHistoryData } = useCalculator();
+    const { historyData, handleHistoryData, result, handleClearResult, handlePage } = useCalculator();
 
     const formik = useFormik({
-        initialValues: {},
-        validationSchema,
-        onSubmit: (values) => {
-
-            handleHistoryData(values);
+        initialValues: {
+            licensePlate: "",
+            vehicleModel: "",
+            fuelTankCapacity: "",
+            maximumWeight: "",
+            averageConsumption: "",
+            travelledDistance: ""
         },
+        validationSchema,
+        onReset: () => {
+            handleClearResult();
+        },
+        onSubmit: (values) => {
+            handleHistoryData(values);
+        }
     });
 
     return (
@@ -27,7 +37,7 @@ export const Calculator = () => {
                     fullWidth
                     id="licensePlate"
                     name="licensePlate"
-                    label="Placa"
+                    label="Placa do Veículo"
                     type="text"
                     value={formik.values.licensePlate}
                     onChange={formik.handleChange}
@@ -54,7 +64,7 @@ export const Calculator = () => {
                     fullWidth
                     id="fuelTankCapacity"
                     name="fuelTankCapacity"
-                    label="Capacidade do Tanque de Combustível"
+                    label="Capacidade do Tanque de Combustível (l)"
                     type="number"
                     value={formik.values.fuelTankCapacity}
                     onChange={formik.handleChange}
@@ -65,7 +75,7 @@ export const Calculator = () => {
                     fullWidth
                     id="maximumWeight"
                     name="maximumWeight"
-                    label="Peso Máximo"
+                    label="Carga Máxima (TON)"
                     type="number"
                     value={formik.values.maximumWeight}
                     onChange={formik.handleChange}
@@ -76,7 +86,7 @@ export const Calculator = () => {
                     fullWidth
                     id="averageConsumption"
                     name="averageConsumption"
-                    label="Consumo Médio"
+                    label="Consumo Médio (100Km)"
                     type="number"
                     value={formik.values.averageConsumption}
                     onChange={formik.handleChange}
@@ -87,17 +97,27 @@ export const Calculator = () => {
                     fullWidth
                     id="travelledDistance"
                     name="travelledDistance"
-                    label="Distância Percorrida"
+                    label="Distância Percorrida (Km)"
                     type="number"
                     value={formik.values.travelledDistance}
                     onChange={formik.handleChange}
                     error={formik.touched.travelledDistance && Boolean(formik.errors.travelledDistance)}
                     helperText={formik.touched.travelledDistance && formik.errors.travelledDistance}
                 />
-                <Button color="primary" variant="contained" type="submit">
+                <Button onClick={() => formik.resetForm({ values: "" })} color="primary" variant="contained" type='reset'>
+                    Limpar
+                </Button>
+                <Button color="secondary" variant="contained" type="submit">
                     Calcular
                 </Button>
             </FormStyled>
+            {
+                historyData.length > 0 ?
+                 <Button fullWidth color="secondary" variant="contained" onClick={() => handlePage("/historico")}>Histórico</Button> : ""
+            }
+            {
+                result ? <p>Resultado <strong>{result}</strong> l/TON/Km</p> : ""
+            }            
         </Box>
     );
 };
