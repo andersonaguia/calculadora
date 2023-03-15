@@ -21,6 +21,7 @@ export const CalculatorProvider = ({ children }) => {
 
     const handleHistoryData = (data) => {
         const vehicleData = data;
+        vehicleData.id = historyData.length + 1;
         vehicleData.fuelConsumptionPerTon = calculateAverageConsumption(data);
 
         const updateData = [
