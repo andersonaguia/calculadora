@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import { UlStyled } from './header.styles';
 
 export const Header = () => {
     const navigate = useNavigate();
@@ -18,14 +19,14 @@ export const Header = () => {
                     <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
                         CalcBras
                     </Typography>
-                    <ul>
+                    <UlStyled>
                         <li>
-                            <Button color="secondary" variant="contained" onClick={() => handlePage("/calculadora")}>Calculadora</Button>
+                            <Button fullWidth color="secondary" variant="contained" onClick={() => handlePage("/calculadora")}>Calculadora</Button>
                         </li>
                         <li>
-                            <Button color="secondary" variant="contained" onClick={() => handlePage("/historico")}>Histórico</Button>
+                            <Button fullWidth color="secondary" variant="contained" onClick={() => handlePage("/historico")}>Histórico</Button>
                         </li>
-                    </ul>
+                    </UlStyled>
                 </Toolbar>
             </AppBar>
         </Box>
