@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://pt-br.reactjs.org/" target="blank"><img src="./src/assets/react.svg" width="200" alt="React Logo" /></a>
+ <a title="Icons8, MIT &lt;http://opensource.org/licenses/mit-license.php&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Icons8_flat_calculator.svg"><img width="100" alt="Icons8 flat calculator" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Icons8_flat_calculator.svg/512px-Icons8_flat_calculator.svg.png"></a>
 </p>
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
@@ -26,26 +26,31 @@ CalcBras é uma calculadora para consumo médio de combustível por tonelada tra
 
 ## :warning: Configuração da aplicação
 
-1) Realizar download desse repositório inserindo no terminal o comando `git clone https://github.com/andersonaguia/calculadora.git`
+1) Realizar download desse repositório `git clone https://github.com/andersonaguia/calculadora.git`
 2) Utilizar o comando `npm install` para instalar as dependências;
 3) Utilizar o comando `npm run dev` para executar a aplicação no ambiente de desenvolvimento.
 
 ## 🛠 Tecnologias
 
-[![NodeJS Badge](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white&link=https://nodejs.org/en/)](https://nodejs.org/en/)
+<div align=center> 
+<div style="display: flex; align-items: flex-start;">
+<a href="https://pt-br.reactjs.org/" target="blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" align="center" alt="icon-React" height="30" width="40" /></a>
 
-[![TypeScript Badge](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white&link=https://www.typescriptlang.org/)](https://www.typescriptlang.org/)	
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" align="center" alt="icon-JavaScript" height="30" width="40" /></a>
 
-[![NestJS Badge](https://img.shields.io/badge/nestjs-E0234E?style=for-the-badge&logo=nestjs&logoColor=white&link=https://nestjs.com/)](https://nestjs.com/)
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" align="center" alt="icon-Html5" height="30" width="40" /></a>
 
-[![ExpressJS Badge](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white&link=https://expressjs.com/)](https://expressjs.com/)
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" align="center" alt="icon-CSS3" height="30" width="40" /></a>
 
-[![NpmJS Badge](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white&link=https://www.npmjs.com/)](https://www.npmjs.com/)
+<a href="https://git-scm.com/" target="blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" align="center" alt="icon-Git" height="30" width="40" /></a>
 
-[![Insomnia Badge](
-https://img.shields.io/badge/Insomnia-5849be?style=for-the-badge&logo=Insomnia&logoColor=white&link=https://insomnia.rest/)](https://insomnia.rest/)
+<a href="https://mui.com/" target="blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" align="center" alt="icon-MaterialUI" height="30" width="40" /></a>
 
-[![Prettier Badge](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E&link=https://prettier.io/)](https://prettier.io/)
+<a href="https://formik.org/" target="blank"><img src="./public/formik.svg" align="center" alt="icon-Formik" height="30" width="40" /></a>          
+
+<a href="https://eslint.org/" target="blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" align="center" alt="icon-ESLint" height="30" width="40" /></a>
+</div>
+</div>
 
 ## 🦸 Autor
  <b>Anderson Aguiar</b>🚀
