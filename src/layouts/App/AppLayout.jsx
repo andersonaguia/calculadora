@@ -6,6 +6,7 @@ import { Header } from '../../components/AppHeader/Header';
 import { ThemeProvider } from '@mui/material/styles';
 import { themeLight } from '../../themes/themeLight';
 import { Main } from '../../components/AppMain/Main';
+import { Footer } from '../../components/AppFooter/Footer';
 
 export const AppLayout = () => {
     return (
@@ -17,6 +18,7 @@ export const AppLayout = () => {
                         <Main>
                             <Router />
                         </Main>
+                        <Footer/>
                     </CalculatorProvider>
                 </BrowserRouter>
             </CssBaseline>
