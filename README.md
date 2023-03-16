@@ -9,7 +9,7 @@
 
 ## 💻 Sobre o projeto
 
-CalcBras é uma calculadora para consumo médio de combustível por tonelada transportada de uma frota de caminhões.
+[CalcBras](https://calcbras.netlify.app/) é uma calculadora para consumo médio de combustível por tonelada transportada de uma frota de caminhões.
 
 ## ⚙️ Funcionalidades
 
