@@ -1,6 +1,6 @@
 export const buttonStyle = (color, hoverColor, width) => {
     const style = {
-        width: width,
+        width,
         backgroundColor: color,
         cursor: "pointer",
         color: "text.default",

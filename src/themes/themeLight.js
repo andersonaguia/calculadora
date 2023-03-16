@@ -26,7 +26,7 @@ export const themeLight = createTheme({
         text: {
             default: "#FFFFFF",
             primary: "#3e5055",
-            secondary: "8b979f"
+            secondary: "#8b979f"
         }
     },
     typography: {
