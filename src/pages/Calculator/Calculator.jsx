@@ -1,12 +1,14 @@
 import { useFormik } from 'formik';
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, TextField, Tooltip, Typography } from '@mui/material';
 import { validationSchema } from '../../validations/formValidation';
 import { useCalculator } from '../../contexts/calculator/useCalculator';
-import { FormStyled } from './calculator.styles';
-import { useState } from 'react';
+import HistoryIcon from '@mui/icons-material/History';
+import { buttonStyle } from '../../GlobalStyles/button.styles';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { boxStyled, resultTextFieldStyled, textFieldStyled, typographyStyled } from './calculator.styles';
 
 export const Calculator = () => {
-    const { historyData, handleHistoryData, result, handleClearResult, handlePage } = useCalculator();
+    const { handleHistoryData, result, handleClearResult, handlePage } = useCalculator();
 
     const formik = useFormik({
         initialValues: {
@@ -27,13 +29,15 @@ export const Calculator = () => {
     });
 
     return (
-        <Box sx={{
-            padding: 3,
-            width: 400,
-            backgroundColor: "background.paper"
-        }} >
-            <FormStyled onSubmit={formik.handleSubmit}>
+        <Box sx={boxStyled} >
+            <form onSubmit={formik.handleSubmit}>
+                <Typography sx={typographyStyled} variant="h2" component="div" >
+                    Dados da Frota
+                </Typography>
                 <TextField
+                    sx={{
+                        marginBottom: "16px"
+                    }}
                     fullWidth
                     id="licensePlate"
                     name="licensePlate"
@@ -45,11 +49,7 @@ export const Calculator = () => {
                     helperText={formik.touched.licensePlate && formik.errors.licensePlate}
                 />
                 <TextField
-                    sx={
-                        {
-                            backgroundColor: "text.secondary"
-                        }
-                    }
+                    sx={textFieldStyled}
                     fullWidth
                     id="vehicleModel"
                     name="vehicleModel"
@@ -61,10 +61,11 @@ export const Calculator = () => {
                     helperText={formik.touched.vehicleModel && formik.errors.vehicleModel}
                 />
                 <TextField
+                    sx={textFieldStyled}
                     fullWidth
                     id="fuelTankCapacity"
                     name="fuelTankCapacity"
-                    label="Capacidade do Tanque de Combustível (l)"
+                    label="Capacidade do Tanque (l)"
                     type="number"
                     value={formik.values.fuelTankCapacity}
                     onChange={formik.handleChange}
@@ -72,6 +73,7 @@ export const Calculator = () => {
                     helperText={formik.touched.fuelTankCapacity && formik.errors.fuelTankCapacity}
                 />
                 <TextField
+                    sx={textFieldStyled}
                     fullWidth
                     id="maximumWeight"
                     name="maximumWeight"
@@ -83,6 +85,7 @@ export const Calculator = () => {
                     helperText={formik.touched.maximumWeight && formik.errors.maximumWeight}
                 />
                 <TextField
+                    sx={textFieldStyled}
                     fullWidth
                     id="averageConsumption"
                     name="averageConsumption"
@@ -94,6 +97,7 @@ export const Calculator = () => {
                     helperText={formik.touched.averageConsumption && formik.errors.averageConsumption}
                 />
                 <TextField
+                    sx={textFieldStyled}
                     fullWidth
                     id="travelledDistance"
                     name="travelledDistance"
@@ -104,20 +108,50 @@ export const Calculator = () => {
                     error={formik.touched.travelledDistance && Boolean(formik.errors.travelledDistance)}
                     helperText={formik.touched.travelledDistance && formik.errors.travelledDistance}
                 />
-                <Button onClick={() => formik.resetForm({ values: "" })} color="primary" variant="contained" type='reset'>
-                    Limpar
-                </Button>
-                <Button color="secondary" variant="contained" type="submit">
+                {
+                    result ? <TextField sx={resultTextFieldStyled}
+                        fullWidth
+                        id="maximumWeight"
+                        name="maximumWeight"
+                        label="Consumo (l/Ton/Km)"
+                        defaultChecked
+                        value={result}
+                    >
+                    </TextField> : ""
+                }
+                <Button
+                    sx={buttonStyle("primary.main", "primary.light")}
+                    fullWidth
+                    variant="contained"
+                    type="submit">
                     Calcular
                 </Button>
-            </FormStyled>
-            {
-                historyData.length > 0 ?
-                 <Button fullWidth color="secondary" variant="contained" onClick={() => handlePage("/historico")}>Histórico</Button> : ""
-            }
-            {
-                result ? <p>Resultado <strong>{result}</strong> l/TON/Km</p> : ""
-            }            
+                <Box sx={{
+                    width: "100%",
+                    gap: "20px",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "space-around"
+                }}>
+                    <Tooltip title="Limpar dados" arrow>
+                        <Button
+                            sx={buttonStyle("primary.error", "secondary.error", "180px")}
+                            onClick={() => formik.resetForm({ values: "" })} variant="contained"
+                            type='reset'>
+                            <DeleteForeverIcon />
+                        </Button>
+                    </Tooltip>
+                    <Tooltip title="Histórico" arrow>
+                        <Button
+                            sx={buttonStyle("secondary.dark", "secondary.light", "180px")}
+                            variant="contained"
+                            onClick={() => handlePage("/historico")}>
+                            <HistoryIcon />
+                        </Button>
+                    </Tooltip>
+                </Box>
+            </form>
         </Box>
     );
 };

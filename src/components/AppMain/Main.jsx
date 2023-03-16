@@ -1,11 +1,11 @@
-import { MainStyled } from "./main.styles";
+import { mainStyled } from "./main.styles";
 import PropTypes from 'prop-types';
 
 export const Main = ({ children }) => {
     return (
-        <MainStyled>
+        <main style={mainStyled}>
             {children}
-        </MainStyled>
+        </main>
     )
 }
 

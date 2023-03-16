@@ -1,50 +1,58 @@
 export const columns = [
-    { field: 'id', headerName: 'ID', width: 80 },
     {
         field: 'licensePlate',
         headerName: 'Placa',
-        width: 120,
+        width: 130,
         editable: false,
+        headerClassName: "title"
     },
     {
         field: 'vehicleModel',
         headerName: 'Modelo',
         width: 120,
         editable: false,
+        headerClassName: "title"
     },
     {
         field: 'fuelTankCapacity',
-        headerName: 'Capacidade do Tanque (l)',
+        headerName: 'Cap. Tanque (l)',
         type: 'number',
-        width: 180,
+        width: 120,
         editable: false,
+        headerClassName: "title",
+        headerAlign: "center"
     },
     {
         field: 'averageConsumption',
-        headerName: 'Consumo Médio (l/100Km)',
+        headerName: 'Cons. Médio (l/100Km)',
         type: 'number',
-        width: 200,
+        width: 170,
         editable: false,
+        headerClassName: "title",
+        headerAlign: "center"
     },
     {
         field: 'maximumWeight',
-        headerName: 'Carga Máxima (TON)',
+        headerName: 'Carga Máx. (TON)',
         type: 'number',
-        width: 160,
+        width: 140,
         editable: false,
+        headerClassName: "title"
     },
     {
         field: 'travelledDistance',
-        headerName: 'Distância Percorrida (Km)',
+        headerName: 'Dist. Percorrida (Km)',
         type: 'number',
-        width: 200,
+        width: 160,
         editable: false,
+        headerClassName: "title"
     },
     {
         field: 'fuelConsumptionPerTon',
-        headerName: 'Consumo Médio (l/TON/Km)',
+        headerName: 'Consumo (l/TON/Km)',
         type: 'number',
-        width: 210,
+        width: 160,
         editable: false,
+        headerClassName: "title"
     }
 ];
