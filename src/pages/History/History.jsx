@@ -26,7 +26,7 @@ export const History = () => {
         <Box sx={boxStyled} >
             <Typography sx={typographyStyled} variant="h2" component="h2">
                 Histórico
-            </Typography>;
+            </Typography>
             < DataGrid
                 sx={dataGridStyled}
                 rows={historyData}
