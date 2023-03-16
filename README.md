@@ -26,9 +26,18 @@ CalcBras é uma calculadora para consumo médio de combustível por tonelada tra
 
 ## :warning: Configuração da aplicação
 
-1) Realizar download desse repositório `git clone https://github.com/andersonaguia/calculadora.git`
-2) Utilizar o comando `npm install` para instalar as dependências;
-3) Utilizar o comando `npm run dev` para executar a aplicação no ambiente de desenvolvimento.
+1) Realizar download do repositório 
+```
+git clone https://github.com/andersonaguia/calculadora.git
+```
+2) Instalar as dependências 
+```
+npm install
+``` 
+3) Executar a aplicação em modo de desenvolvimento
+```
+npm run dev
+```
 
 ## 🛠 Tecnologias
 
